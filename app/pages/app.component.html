@@ -1,0 +1,20 @@
+<md-sidenav-layout class="sidenav-layout">
+    <md-sidenav #start class="menu-sidenav">
+        <md-toolbar color="primary">
+            Menu
+        </md-toolbar>
+        <my-sidebar (linkClicked)="start.toggle()"></my-sidebar>
+    </md-sidenav>
+
+    <div class="demo-sidenav-content">
+        <md-toolbar color="primary" class="demo-toolbar">
+            <i class="material-icons demo-toolbar-icon" (click)="start.toggle()">menu</i>
+            <span>{{title}}</span>
+            <span class="demo-fill-remaining"></span>
+        </md-toolbar>
+        <div class="canvas">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</md-sidenav-layout>
+

@@ -1,0 +1,8 @@
+<div class="card-list">
+    <button md-fab class="fab-button" (click)="OnCreate()">
+        <i class="material-icons md-24">add</i>
+    </button>
+    <div *ngFor="#session of sessions" class="mycard">
+        <my-sessioncard [session]=session (detailRequested)="NavigateDetail($event)"></my-sessioncard>
+    </div>
+</div>

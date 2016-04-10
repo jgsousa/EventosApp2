@@ -1,0 +1,13 @@
+<div>
+    <md-card>
+        <md-card-subtitle md-line>{{session.horario}}</md-card-subtitle>
+        <md-card-title md-line>{{session.nome}}</md-card-title>
+        <md-card-content md-line>
+            {{session.descricao}}
+        </md-card-content>
+        <md-card-actions>
+            <button md-button (click)="DetailRequested()">DETALHE</button>
+            <button md-button (click)="DeleteRequested()" color="warn">APAGAR</button>
+        </md-card-actions>
+    </md-card>
+</div>

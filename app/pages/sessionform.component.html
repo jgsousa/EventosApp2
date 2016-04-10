@@ -1,0 +1,28 @@
+<md-card class="card-form">
+    <md-toolbar color="primary">Criar nova sessão</md-toolbar>
+    <md-card-content>
+        <p>
+            <br>
+        </p>
+        <form>
+            <md-input placeholder="Nome da sessão" [(ngModel)]="model.nome">>
+            </md-input><br>
+
+            <md-input placeholder="Data da sessão" type="Date" [(ngModel)]="model.data">
+            </md-input><br>
+
+            <span>
+                <md-input placeholder="Hora de Início" type="time" class="form-time" [(ngModel)]="model.horaInicio"> ></md-input>
+                <md-input placeholder="Hora de Fim" type="time" class="form-time" [(ngModel)]="model.horaFim"></md-input>
+            </span><br>
+
+            <md-input placeholder="Descrição longa" class="form-textarea" [(ngModel)]="model.descricao">
+            </md-input><br>
+
+            <md-card-actions>
+                <button md-button (click)="Save()" >GRAVAR</button>
+                <button md-button (click)="Cancel()" color="accent">APAGAR</button>
+            </md-card-actions>
+        </form>
+    </md-card-content>
+</md-card>
