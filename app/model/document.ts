@@ -1,5 +1,10 @@
 export class Document {
+    _id:string;
     eventoId:string;
     sessaoId:string;
-    file:Object;
+    descricao:string;
+    fileUrl:string;
+    constructor(){
+        
+    }
 }

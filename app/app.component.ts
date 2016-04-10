@@ -7,9 +7,12 @@ import {SidebarComponent} from "./sidebar.component";
 import { MdToolbar } from "@angular2-material/toolbar";
 import { MD_SIDENAV_DIRECTIVES } from "@angular2-material/sidenav";
 import {SessionService} from "./services/session.service";
+import {DocumentService} from "./services/document.services";
 import {SessionlistComponent} from "./sessionlist.component";
 import {HTTP_PROVIDERS} from "angular2/http";
 import {SessionformComponent} from "./components/sessionform.component";
+import {DocuploadComponent} from "./components/docupload.component";
+import {DoclistComponent} from "./components/doclist.component";
 
 @Component({
     selector: 'my-app',
@@ -17,7 +20,8 @@ import {SessionformComponent} from "./components/sessionform.component";
     directives: [ROUTER_DIRECTIVES, MdToolbar, MD_SIDENAV_DIRECTIVES, SidebarComponent],
     providers: [
         SessionService,
-        HTTP_PROVIDERS
+        HTTP_PROVIDERS,
+        DocumentService
     ]
 })
 
@@ -42,7 +46,7 @@ import {SessionformComponent} from "./components/sessionform.component";
     {
         path: '/documents',
         name: 'Documents',
-        component: HomeComponent
+        component: DoclistComponent
     },
     {
         path: '/sessions/create',
@@ -53,6 +57,11 @@ import {SessionformComponent} from "./components/sessionform.component";
         path: '/sessions/:id',
         name: 'SessionEdit',
         component: SessionformComponent
+    },
+    {
+        path: '/document/upload',
+        name: 'DocumentUpload',
+        component: DocuploadComponent
     }
 ])
 

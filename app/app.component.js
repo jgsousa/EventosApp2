@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', "./home.component", "./sidebar.component", "@angular2-material/toolbar", "@angular2-material/sidenav", "./services/session.service", "./sessionlist.component", "angular2/http", "./components/sessionform.component"], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', "./home.component", "./sidebar.component", "@angular2-material/toolbar", "@angular2-material/sidenav", "./services/session.service", "./services/document.services", "./sessionlist.component", "angular2/http", "./components/sessionform.component", "./components/docupload.component", "./components/doclist.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', "./home.component", "./side
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, home_component_1, sidebar_component_1, toolbar_1, sidenav_1, session_service_1, sessionlist_component_1, http_1, sessionform_component_1;
+    var core_1, router_1, home_component_1, sidebar_component_1, toolbar_1, sidenav_1, session_service_1, document_services_1, sessionlist_component_1, http_1, sessionform_component_1, docupload_component_1, doclist_component_1;
     var AppComponent;
     return {
         setters:[
@@ -35,6 +35,9 @@ System.register(['angular2/core', 'angular2/router', "./home.component", "./side
             function (session_service_1_1) {
                 session_service_1 = session_service_1_1;
             },
+            function (document_services_1_1) {
+                document_services_1 = document_services_1_1;
+            },
             function (sessionlist_component_1_1) {
                 sessionlist_component_1 = sessionlist_component_1_1;
             },
@@ -43,6 +46,12 @@ System.register(['angular2/core', 'angular2/router', "./home.component", "./side
             },
             function (sessionform_component_1_1) {
                 sessionform_component_1 = sessionform_component_1_1;
+            },
+            function (docupload_component_1_1) {
+                docupload_component_1 = docupload_component_1_1;
+            },
+            function (doclist_component_1_1) {
+                doclist_component_1 = doclist_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -56,7 +65,8 @@ System.register(['angular2/core', 'angular2/router', "./home.component", "./side
                         directives: [router_1.ROUTER_DIRECTIVES, toolbar_1.MdToolbar, sidenav_1.MD_SIDENAV_DIRECTIVES, sidebar_component_1.SidebarComponent],
                         providers: [
                             session_service_1.SessionService,
-                            http_1.HTTP_PROVIDERS
+                            http_1.HTTP_PROVIDERS,
+                            document_services_1.DocumentService
                         ]
                     }),
                     router_1.RouteConfig([
@@ -79,7 +89,7 @@ System.register(['angular2/core', 'angular2/router', "./home.component", "./side
                         {
                             path: '/documents',
                             name: 'Documents',
-                            component: home_component_1.HomeComponent
+                            component: doclist_component_1.DoclistComponent
                         },
                         {
                             path: '/sessions/create',
@@ -90,6 +100,11 @@ System.register(['angular2/core', 'angular2/router', "./home.component", "./side
                             path: '/sessions/:id',
                             name: 'SessionEdit',
                             component: sessionform_component_1.SessionformComponent
+                        },
+                        {
+                            path: '/document/upload',
+                            name: 'DocumentUpload',
+                            component: docupload_component_1.DocuploadComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [])

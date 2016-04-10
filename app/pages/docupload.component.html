@@ -1,0 +1,19 @@
+<md-card class="card-form">
+    <md-toolbar color="primary">Upload de novo ficheiro</md-toolbar>
+    <md-card-content>
+        <p>
+            <br>
+        </p>
+        <form>
+            <md-input placeholder="Descrição" [(ngModel)]="model.descricao">>
+            </md-input><br>
+
+
+            <input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+            <md-card-actions>
+                <button md-button (click)="Upload()" >UPLOAD</button>
+                <button md-button (click)="Cancel()" color="accent">APAGAR</button>
+            </md-card-actions>
+        </form>
+    </md-card-content>
+</md-card>

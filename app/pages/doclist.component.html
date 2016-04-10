@@ -1,0 +1,17 @@
+<div class="card-list">
+    <button md-fab class="fab-button" (click)="OnCreate()">
+        <i class="material-icons md-24">add</i>
+    </button>
+    <div *ngFor="#document of documents" class="mycard">
+        <md-card>
+            <md-card-title md-line>{{document.descricao}}</md-card-title>
+            <md-card-content md-line>
+                {{document.fileUrl}}
+            </md-card-content>
+            <md-card-actions>
+                <button md-button (click)="OpenRequested(document.fileUrl)">ABRIR</button>
+                <button md-button (click)="DeleteRequested()" color="warn">APAGAR</button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>
